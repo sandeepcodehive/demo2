@@ -8,10 +8,12 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider
-    domain="sand-dev.us.auth0.com"
-    clientId="zxLNgKjQc69pjzQQ7kIfZNK5kSmD4Rmv"
+    domain="dev-oyr65d0p8l1kbceo.us.auth0.com"
+    clientId="VjkTKAo80PdZJEaoSDJubFTNRHPxRdHv"
+    cacheLocation="localstorage"
     authorizationParams={{
-      redirect_uri: window.location.origin
+      redirect_uri: window.location.origin,
+
     }}
   >
     <App />

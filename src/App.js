@@ -8,6 +8,7 @@ import Dataset from './components/Dataset';
 import Login from './components/Auth/Login';
 import Logout from './components/Auth/Logout';
 import { useAuth0 } from "@auth0/auth0-react";
+import Profile from './components/Profile';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -35,6 +36,9 @@ function App() {
                       <Link className="nav-link" to="/setting" style={{ color: "white" }}>Setting</Link>
                     </li>
                     <li className="nav-item">
+                      <Link className="nav-link" to="/profile" style={{ color: "white" }}>Profile</Link>
+                    </li>
+                    <li className="nav-item">
                       <Link className="nav-link" to="/logout" style={{ color: "white" }}>Sign out</Link>
                     </li>
                   </> :
@@ -57,6 +61,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/dataset" element={<Dataset />} />
                     <Route path="/setting" element={<Setting />} />
+                    <Route path='/profile' element={<Profile />} />
                     <Route path='/logout' element={<Logout />} />
                   </>
                   : null
