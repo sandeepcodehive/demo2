@@ -8,8 +8,8 @@ function Profile() {
     return (
         <div>
             <img src={user.picture} alt={user.name} style={{width:"100px",height:"100px",borderRadius:"50%"}}/>
-            <h2>Name:{user.name}</h2>
-            <h2>Email:{user.email}</h2>
+            <h3>Name:{user.name}</h3>
+            <h3>Email:{user.email}</h3>
         </div>
 
     )

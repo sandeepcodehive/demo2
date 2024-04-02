@@ -5,18 +5,20 @@ import { useAuth0 } from "@auth0/auth0-react";
 function Sidebar() {
     const { isAuthenticated, isLoading, loginWithRedirect, logout } = useAuth0();
 
+    // console.log("before", isLoading);
+
     useEffect(() => {
         if (!isAuthenticated && !isLoading) {
             loginWithRedirect();
+            return;
         }
     }, [isAuthenticated, isLoading, loginWithRedirect]);
 
-    if (isLoading) {
-        return <div>Loading ...</div>;
-    }
+    // console.log("after", isLoading);
+
 
     if (!isAuthenticated) {
-        return null; 
+        return null;
     }
 
     return (
@@ -36,7 +38,6 @@ function Sidebar() {
             <li className="nav-item">
                 <button className='nav-link' onClick={() => logout()} style={{ color: "white" }}>Log out</button>
             </li>
-
         </>
     )
 }
